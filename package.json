@@ -1,0 +1,47 @@
+{
+  "name": "testutils",
+  "version": "1.0.0",
+  "description": "test utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/*.spec.js",
+    "test-with-coverage": "nyc mocha tests",
+    "lint": "eslint . -f node_modules/eslint-html-reporter/reporter.js -o build/reports/eslint.html",
+    "lint-to-console": "eslint .",
+    "prettier": "prettier --write \"{lib,tests}/**/*.{js,ts}\""
+  },
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Igor Savin",
+      "email": "kibertoad@gmail.com"
+    }
+  ],
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "^1.12.1"
+  },
+  "nyc": {
+    "description": "test coverage",
+    "include": [
+      "src/**"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "cache": true,
+    "all": true,
+    "report-dir": "./build/reports/coverage",
+    "check-coverage": true,
+    "lines": 50,
+    "statements": 50,
+    "functions": 66,
+    "branches": 33
+  }
+}
